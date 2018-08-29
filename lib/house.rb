@@ -25,7 +25,10 @@ class House
       room.area
     end
     room_areas.sum
-    binding.pry
+  end
+
+  def price_per_square_foot
+    (@price[1..-1].to_f / area).round(2)
   end
 
 end
