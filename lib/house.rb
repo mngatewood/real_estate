@@ -37,4 +37,9 @@ class House
     rooms.reverse
   end
 
+  def rooms_sorted_by_category
+    rooms = @rooms.sort_by {|room| room.category}
+    rooms
+  end
+
 end
