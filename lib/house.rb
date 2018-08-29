@@ -1,5 +1,3 @@
-require 'pry'
-
 class House
 
   attr_reader :price, :address, :rooms
@@ -15,15 +13,11 @@ class House
   end
 
   def rooms_from_category(category)
-    @rooms.find_all do |room|
-      room.category == category
-    end
+    @rooms.find_all {|room| room.category == category}
   end
 
   def area
-    room_areas = @rooms.map do |room|
-      room.area
-    end
+    room_areas = @rooms.map {|room| room.area}
     room_areas.sum
   end
 
@@ -38,8 +32,7 @@ class House
   end
 
   def rooms_sorted_by_category
-    rooms = @rooms.sort_by {|room| room.category}
-    rooms
+    @rooms.sort_by {|room| room.category}
   end
 
 end
