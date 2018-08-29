@@ -28,7 +28,8 @@ class House
   end
 
   def price_per_square_foot
-    (@price[1..-1].to_f / area).round(2)
+    price = @price[1..-1].to_f
+    (price / area).round(2)
   end
 
 end
